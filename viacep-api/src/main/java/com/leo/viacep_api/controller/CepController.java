@@ -29,7 +29,7 @@ public class CepController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("CEP não encontrado.");
             }
 
-            return ResponseEntity.ok(cepResponse);
+            return ResponseEntity.ok(cepResponse); // here the body is the cepResponse because its ok
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao processar a solicitação.");
@@ -40,3 +40,6 @@ public class CepController {
 // with ResponseEntity we can define the status code like 404 not found, 500 internal server error or 400 bad request
 // and this will be returned to the client, being easy to handle the errors and better for the user
 // using toString() method we can get the error message
+
+// With .body(), you are explicitly telling Spring to send the response object as the body of the HTTP response. 
+// This object will be automatically converted to JSON if needed and sent to the client.
