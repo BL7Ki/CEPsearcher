@@ -23,12 +23,15 @@ public class ViacepApiApplication {
         
         while (true) {
             System.out.print("Enter a CEP (or type 'exit' to quit): ");
-            String cep = scanner.nextLine();
+            String cep = scanner.nextLine().trim();
 
             if (cep.equalsIgnoreCase("exit")) {
                 System.out.println("Exiting...");
                 break;
             } // equalsIgnoreCase is used to compare strings in a case-insensitive manner
+
+            // Remove any hyphen (-) before validating
+            cep = cep.replace("-", "");
 
             // Validate input (CEP should have exactly 8 digits)
             if (!cep.matches("\\d{8}")) {

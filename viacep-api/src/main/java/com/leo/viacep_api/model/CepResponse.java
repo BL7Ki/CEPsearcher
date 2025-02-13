@@ -1,5 +1,6 @@
 package com.leo.viacep_api.model;
 
+// it can be a DTO because its to represent a response and a record DTO its more simple
 public class CepResponse {
     private String cep;
     private String logradouro;
