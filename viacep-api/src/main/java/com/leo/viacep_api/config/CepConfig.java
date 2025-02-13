@@ -11,4 +11,5 @@ public class CepConfig {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+// RestTemplate is like a client HTTP from Spring Boot. It allows us to send HTTP requests and receive HTTP responses.
 }
